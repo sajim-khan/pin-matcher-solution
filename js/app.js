@@ -45,3 +45,24 @@ document.getElementById('calculator').addEventListener('click', function(event) 
     }
     
 })
+
+document.getElementById('verify-pin').addEventListener('click', function() {
+    const displayPinField = document.getElementById('display-pin');
+    const currentPin = displayPinField.value;
+    
+    const typedNumberField = document.getElementById('typed-numbers');
+    const typedNumber = typedNumberField.value;
+    
+    const pinSuccessMessage = document.getElementById('pin-success');
+    const pinErrorMessage = document.getElementById('pin-error');
+    if (typedNumber === currentPin) {
+        
+        pinSuccessMessage.style.display = 'block';
+        pinErrorMessage.style.display = 'none';
+    }
+    else {
+    
+        pinErrorMessage.style.display = 'block';
+        pinSuccessMessage.style.display = 'none';
+    }
+})
